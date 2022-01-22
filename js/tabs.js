@@ -28,11 +28,12 @@ const activeTab = () => {
   ];
 
   const changeContent = (index) => {
+    document.title = `IPhone 13 Pro ${tabsOptions[index].name}`;
     tabsTitle.textContent = `Смартфон Apple iPhone 13 Pro ${tabsOptions[index].memory}GB ${tabsOptions[index].name}`;
-    tabsImage.setAttribute("src", `${tabsOptions[index].image}`);
     tabsPrice.textContent = `${tabsOptions[index].cost}₽`;
     tabsMemory.textContent = `Встроенная память (ROM) ${tabsOptions[index].memory} ГБ`;
-    document.title = `IPhone 13 Pro ${tabsOptions[index].name}`;
+
+    tabsImage.setAttribute("src", `${tabsOptions[index].image}`);
   };
 
   const changeActiveTab = (indexOnClick) => {
