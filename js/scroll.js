@@ -1,20 +1,5 @@
 "use strict";
 
-seamless.polyfill();
-
-const links = document.querySelectorAll(".header-menu__item a");
-const linkCharacteristics = document.querySelector(
-  ".card-details__link-characteristics"
-);
-
-links.forEach((link) => {
-  getSection(link);
-});
-
-getSection(linkCharacteristics);
-
-//functions
-
 function getSection(link) {
   link.addEventListener("click", (evt) => {
     evt.preventDefault();
@@ -43,3 +28,20 @@ function smoothScrollNull() {
     block: "end",
   });
 }
+
+const scrollScript = () => {
+  seamless.polyfill();
+
+  const links = document.querySelectorAll(".header-menu__item a");
+  const linkCharacteristics = document.querySelector(
+    ".card-details__link-characteristics"
+  );
+
+  links.forEach((link) => {
+    getSection(link);
+  });
+
+  getSection(linkCharacteristics);
+};
+
+scrollScript();
