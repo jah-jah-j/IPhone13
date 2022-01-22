@@ -1,7 +1,5 @@
 "use strict";
 const activeTab = () => {
-  const tabPageTitle = document.querySelector("title");
-
   const tabs = document.querySelectorAll(".card-detail__change");
   const tabsTitle = document.querySelector(".card-details__title");
   const tabsImage = document.querySelector(".card__image_item");
@@ -34,7 +32,7 @@ const activeTab = () => {
     tabsImage.setAttribute("src", `${tabsOptions[index].image}`);
     tabsPrice.textContent = `${tabsOptions[index].cost}₽`;
     tabsMemory.textContent = `Встроенная память (ROM) ${tabsOptions[index].memory} ГБ`;
-    tabPageTitle.textContent = `IPhone 13 Pro ${tabsOptions[index].name}`;
+    document.title = `IPhone 13 Pro ${tabsOptions[index].name}`;
   };
 
   const changeActiveTab = (indexOnClick) => {
