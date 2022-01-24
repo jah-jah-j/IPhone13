@@ -1,5 +1,6 @@
 const sendForm = () => {
   const button = document.querySelector(".card-details__button_delivery");
+  const buyButton = document.querySelector(".card-details__button_buy");
   const modal = document.querySelector(".modal");
   const cardTitle = document.querySelector(".card-details__title");
   const closeModal = modal.querySelector(".modal__close");
@@ -19,10 +20,14 @@ const sendForm = () => {
     modal.style.display = "none";
   };
 
-  button.addEventListener("click", () => {
+  const showModal = () => {
     modal.style.display = "flex";
     modalTitle.innerText = cardTitle.textContent;
-  });
+  };
+
+  button.addEventListener("click", showModal);
+
+  buyButton.addEventListener("click", showModal);
 
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
